@@ -6,8 +6,11 @@ const eval = require('../Main/Bot_Developer_Commands/eval')
 const mute = require('../Main/Administrative_Commands/mute')
 const server = require('../Main/Other/server')
 const prefix = require('./Administrative_Commands/prefix')
+const owo = require('./Fun Commands/owo')
+const serverlist = require('./Fun Commands/serverlist')
 const help = require('./Other/help')
 const support = require('./Other/support-link')
+const purge = require('./Administrative_Commands/purge')
 
 
 const command = require('./command')
@@ -19,26 +22,11 @@ client.on('ready', () => {
     eval(client)
     help(client)
     support(client)
+    owo(client)
+    serverlist(client)
+    purge(client)
 
     //prefix(client)
-
-    command(client, ['owo', 'OwO'], (message) => {
-        message.channel.send('OwO!')
-    })
-
-    command(client, ['ServerList', 'serverlist'], (message) => {
-        client.guilds.cache.forEach((guild) => {
-            message.channel.send(`${guild.name} has a total of ${guild.memberCount} members.`)
-        })
-    })
-
-    command(client, 'purge', message => {
-        if (message.member.hasPermission('ADMINISTRATOR')) {
-            message.channel.messages.fetch().then((results) => {
-                message.channel.bulkDelete(results)
-            })
-        }
-    })
 
     command(client, 'editstatus', message => {
         const content = message.content.replace(';editstatus ', '')

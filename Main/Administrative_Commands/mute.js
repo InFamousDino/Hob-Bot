@@ -61,13 +61,12 @@ module.exports = (client) => {
   })
 
   command(client, 'mute', async (message) => {
-    // !mute @ duration duration_type
 
     const syntax = ';mute <@> <duration as a number> <m, h, d, or life>'
 
     const { member, channel, content, mentions, guild } = message
 
-    if (!member.hasPermission('ADMINISTRATOR')) {
+    if (!member.hasPermission('KICK_MEMBER')) {
       channel.send('You do not have permission to run this command.')
       return
     }
@@ -89,9 +88,8 @@ module.exports = (client) => {
 
     const durations = {
       m: 60,
-      h: 60 * 60,
-      d: 60 * 60 * 24,
-      life: -1,
+      h: 3600,
+      d: 86400,
     }
 
     if (!durations[durationType]) {
