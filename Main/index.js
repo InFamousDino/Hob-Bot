@@ -2,10 +2,12 @@ const Discord = require('discord.js')
 const client = new Discord.Client()
 
 const config = require('./config.json')
-const eval = require('../Commands/Bot_Developer_Commands/eval')
-const mute = require('../Commands/Administrative_Commands/mute')
-const server = require('../Commands/Other/server')
+const eval = require('../Main/Bot_Developer_Commands/eval')
+const mute = require('../Main/Administrative_Commands/mute')
+const server = require('../Main/Other/server')
 const prefix = require('./Administrative_Commands/prefix')
+const help = require('./Other/help')
+const support = require('./Other/support-link')
 
 
 const command = require('./command')
@@ -15,6 +17,9 @@ client.on('ready', () => {
 
     mute(client)
     eval(client)
+    help(client)
+    support(client)
+
     //prefix(client)
 
     command(client, ['owo', 'OwO'], (message) => {
@@ -99,39 +104,6 @@ client.on('ready', () => {
                 message.channel.send(`You do not have permission to use this command.`)
             }
         
-    })
-
-    //command(client, 'ping', message => {
-
-    //})
-
-    command(client, 'help', message => {
-        const embed = new Discord.MessageEmbed()
-
-        .setTitle('Hob Bot Commands')
-        .setAuthor('Hob Bot')
-        .setFooter('Hob Commands')
-        .setColor('#00AAFF')
-        .addFields({
-            name: 'Fun Commands',
-            value: ';owo.',
-            inline: true
-        },
-        {
-            name: 'Moderation Commands',
-            value: 'Kick [user, reason], Ban [user, reason], Unban [user]. ',
-            inline: true
-
-        },
-        {
-            name: 'System Commands',
-            value: 'help, permlevel, ping',
-            inline: true
-
-        },
-        )
-
-        message.channel.send(embed)
     })
 })
 
