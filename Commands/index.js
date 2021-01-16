@@ -2,17 +2,20 @@ const Discord = require('discord.js')
 const client = new Discord.Client()
 
 const config = require('./config.json')
-const eval = require('./eval')
-const mute = require('./mute')
-const say = require('./say')
+const eval = require('../Commands/Bot_Developer_Commands/eval')
+const mute = require('../Commands/Administrative_Commands/mute')
+const server = require('../Commands/Other/server')
+const prefix = require('./Administrative_Commands/prefix')
+
+
 const command = require('./command')
 
 client.on('ready', () => {
     console.log('Client is ready!')
 
-    say(client)
     mute(client)
     eval(client)
+    //prefix(client)
 
     command(client, ['owo', 'OwO'], (message) => {
         message.channel.send('OwO!')
