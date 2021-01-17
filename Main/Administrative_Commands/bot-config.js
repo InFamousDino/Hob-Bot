@@ -58,17 +58,11 @@ module.exports = client => {
     command(client, 'editconfig', message => {
         const Perm = 'MANAGE_SERVER'
         const { member } = message
-        const configcatagorys = {
-            prefix = 'prefix',
-            modrole = 'modrole',
-            adminrole = 'adminrole',
-            mutedrole = 'mutedrole'
-        }
 
-        const content = message.content.replace(`${config.prefix}editconfig`, `${configcatagorys[1]}`, ` `)
+        const content = message.content.replace(`${config.prefix}editconfig`, ``, ` `)
 
         if (member.hasPermission(Perm)) {
-            if (message.content === `${config.prefix}editconfig ${configcatagorys[1]} ${content}`) {
+            if (message.content === `${config.prefix}editconfig ${content}`) {
                 config.prefix = content
                 message.channel.send('Successfully set the prefix to ' + content + '.')
             }
