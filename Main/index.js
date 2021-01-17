@@ -33,7 +33,7 @@ client.on('ready', () => {
     editstatus(client)
     kick(client)
     ban(client)
-    //say(client)
+    say(client)
     shutdown(client)
     //prefix(client)
 })
