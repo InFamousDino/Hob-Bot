@@ -15,12 +15,13 @@ const say = require('./Fun Commands/say')
 const editstatus = require('./Bot_Developer_Commands/editstatus')
 const kick = require('./Administrative_Commands/kick')
 const ban = require('./Administrative_Commands/ban')
+const shutdown = require('./Bot_Developer_Commands/shutdown')
 
 
 const command = require('./command')
 
 client.on('ready', () => {
-    console.log('Client is ready!')
+    console.log('Hob is activated!')
 
     //mute(client)
     eval(client)
@@ -32,7 +33,8 @@ client.on('ready', () => {
     editstatus(client)
     kick(client)
     ban(client)
-    say(client)
+    //say(client)
+    shutdown(client)
     //prefix(client)
 })
 

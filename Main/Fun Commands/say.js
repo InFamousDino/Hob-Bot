@@ -1,4 +1,4 @@
-const command = require('../command.json')
+const command = require('../command')
 
 module.exports = client => {
     command(client, 'say', message => {
