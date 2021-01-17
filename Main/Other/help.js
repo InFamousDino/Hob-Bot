@@ -16,19 +16,19 @@ module.exports = client => {
             
             .addFields({
                 name: '**Fun Commands**',
-                value: '||owo||, ||say||',
+                value: '`owo`, `say`',
                 inline: true
             },
 
             {
                 name: '**Server Admin Commands**',
-                value: '||editstatus||, ||mute||, ||kick||, ||ban||, ||purge||.',
+                value: '`editstatus`, `mute`, `kick`, `ban`, `purge`.',
                 inline: true 
             },
         
             {
                 name: '**Other Commands**',
-                value: '||help||, ||permlevel||, ||ping||, ||serverlist||',
+                value: '`help`, `permlevel`, `ping`, `serverlist`',
                 inline: true
         
             },
