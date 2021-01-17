@@ -16,6 +16,7 @@ const editstatus = require('./Bot_Developer_Commands/editstatus')
 const kick = require('./Administrative_Commands/kick')
 const ban = require('./Administrative_Commands/ban')
 const shutdown = require('./Bot_Developer_Commands/shutdown')
+const bot_config = require('./Administrative_Commands/bot-config')
 
 
 const command = require('./command')
@@ -35,6 +36,7 @@ client.on('ready', () => {
     ban(client)
     say(client)
     shutdown(client)
+    //bot_config(client)
     //prefix(client)
 })
 
