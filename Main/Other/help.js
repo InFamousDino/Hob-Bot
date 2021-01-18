@@ -8,7 +8,6 @@ module.exports = client => {
             const embed = new Discord.MessageEmbed()
     
             .setTitle('**Help Commands**')
-            .setAuthor('InFamousDino#7871')
             .setFooter('Hob Bot')
             .setColor('#00AAFF')
             //.setImage('https://cdn.discordapp.com/attachments/799539037332439041/799826560424869898/GFX-Style.jpg')
