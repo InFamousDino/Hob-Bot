@@ -38,7 +38,7 @@ client.on('ready', () => {
     say(client)
     shutdown(client)
     forg(client)
-    //bot_config(client)
+    bot_config(client)
     //prefix(client)
 })
 

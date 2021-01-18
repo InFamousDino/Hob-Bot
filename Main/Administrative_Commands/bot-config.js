@@ -26,47 +26,30 @@ module.exports = client => {
 
             {
                 name: '**Logs:**',
-                value: 'undefined',
+                value: `${config.logschannel}`,
                 inline: true
             },
 
             {
                 name: '**Muted Role:**',
-                value: 'undefined',
+                value: `${config.mutedrole}`,
                 inline: true
             },
 
             {
                 name: '**Mod Role:**',
-                value: 'undefined',
+                value: `${config.modrole}`,
                 inline: true
             },
 
             {
                 name: '**Admin Role:**',
-                value: 'undefined',
+                value: `${config.adminrole}`,
                 inline: true
             }
         )
         message.channel.send(embed)
         
-        } else {
-            message.channel.send('You do not have the required permission to use this command ' + Perm + '.')
-        }
-    })
-
-    command(client, 'editconfig', message => {
-        const Perm = 'MANAGE_SERVER'
-        const { member } = message
-
-        const content = message.content.replace(`${config.prefix}editconfig`, ``, ` `)
-
-        if (member.hasPermission(Perm)) {
-            if (message.content === `${config.prefix}editconfig ${content}`) {
-                config.prefix = content
-                message.channel.send('Successfully set the prefix to ' + content + '.')
-            }
-
         } else {
             message.channel.send('You do not have the required permission to use this command ' + Perm + '.')
         }
