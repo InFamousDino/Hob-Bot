@@ -26,25 +26,25 @@ module.exports = client => {
 
             {
                 name: '**Logs:**',
-                value: `${config.logschannel}`,
+                value: `undefined`,
                 inline: true
             },
 
             {
                 name: '**Muted Role:**',
-                value: `${config.mutedrole}`,
+                value: `undefined`,
                 inline: true
             },
 
             {
                 name: '**Mod Role:**',
-                value: `${config.modrole}`,
+                value: `undefined`,
                 inline: true
             },
 
             {
                 name: '**Admin Role:**',
-                value: `${config.adminrole}`,
+                value: `undefined`,
                 inline: true
             }
         )

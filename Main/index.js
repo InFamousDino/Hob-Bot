@@ -4,8 +4,6 @@ const config = require('./config.json')
 
 const eval = require('../Main/Bot_Developer_Commands/eval')
 const mute = require('../Main/Administrative_Commands/mute')
-const server = require('../Main/Other/server')
-const prefix = require('./Administrative_Commands/prefix')
 const owo = require('./Fun Commands/owo')
 const serverlist = require('./Other/serverlist')
 const help = require('./Other/help')
@@ -19,11 +17,15 @@ const shutdown = require('./Bot_Developer_Commands/shutdown')
 const bot_config = require('./Administrative_Commands/bot-config')
 const forg = require('./Fun Commands/forg')
 const rate = require('./Fun Commands/rate')
+const mongo = require('./Non-Command/mongo')
+const welcome = require('./Administrative_Commands/welcome')
+const current_prefix = require('./Administrative_Commands/prefix-call')
 
 
 const command = require('./command')
+const { Mongoose } = require('mongoose')
 
-client.on('ready', () => {
+client.on('ready', async () => {
     console.log('Hob is activated!')
 
     //mute(client)
@@ -41,7 +43,17 @@ client.on('ready', () => {
     forg(client)
     bot_config(client)
     rate(client)
-    //prefix(client)
+    welcome(client)
+    current_prefix(client)
+
+    await mongo().then(Mongoose => {
+        try {
+        console.log('Connected to our holy mongoose!!!!!')
+        } finally {
+            Mongoose.connection.close()
+        }
+    })
 })
 
 client.login(config.token)
+

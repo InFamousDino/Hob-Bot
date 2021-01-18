@@ -1,0 +1,29 @@
+{
+  "name": "admin",
+  "version": "1.0.0",
+  "description": "\"Hob is a bot made by Seb, this is totally not hue nor anything else but it is inspired by them.\"",
+  "main": "index.js",
+  "dependencies": {
+    "discord.io": "^2.5.3",
+    "discord.js": "^12.5.1",
+    "mongoose": "^5.11.12",
+    "redis": "^3.0.2",
+    "roblox-js": "^4.0.4",
+    "save": "^2.4.0",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InFamousDino/Hob-Bot.git"
+  },
+  "author": "InFamousDino",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/InFamousDino/Hob-Bot/issues"
+  },
+  "homepage": "https://github.com/InFamousDino/Hob-Bot#readme"
+}
