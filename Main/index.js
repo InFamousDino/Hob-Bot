@@ -20,7 +20,7 @@ const rate = require('./Fun Commands/rate')
 const mongo = require('./Non-Command/mongo')
 const welcome = require('./Administrative_Commands/welcome')
 const current_prefix = require('./Administrative_Commands/prefix-call')
-
+const dan_andrews = require('./Fun Commands/dan_andrews')
 
 const command = require('./command')
 const { Mongoose } = require('mongoose')
@@ -45,6 +45,7 @@ client.on('ready', async () => {
     rate(client)
     welcome(client)
     current_prefix(client)
+    dan_andrews(client)
 
     await mongo().then(Mongoose => {
         try {

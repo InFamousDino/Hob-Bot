@@ -27,7 +27,7 @@ module.exports = client => {
         
             {
                 name: '**Other Commands**',
-                value: '`help`, `permlevel`, `ping`, `serverlist`, `support`.',
+                value: '`help`, `permlevel`, `ping`, `serverlist`, `support`, `dan_andrews`.',
                 inline: true
         
             },
