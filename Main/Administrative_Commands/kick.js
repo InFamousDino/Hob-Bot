@@ -17,7 +17,7 @@ module.exports = client => {
                     targetMember.kick({reason})
                     message.channel.send(`${tag} The user was kicked successfully.`)
                 } else {
-                    message.channel.send(`${tag}Please mention a valid user to kick.`)
+                    message.channel.send(`${tag} Please mention a valid user to kick.`)
 
                 }
             } 
