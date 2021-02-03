@@ -21,6 +21,7 @@ const mongo = require('./Non-Command/mongo')
 const welcome = require('./Administrative_Commands/welcome')
 const current_prefix = require('./Administrative_Commands/prefix-call')
 const dan_andrews = require('./Fun Commands/dan_andrews')
+const announce = require('./Administrative_Commands/Announce')
 
 const command = require('./command')
 const { Mongoose } = require('mongoose')
@@ -29,6 +30,7 @@ client.on('ready', async () => {
     console.log('Hob is activated!')
 
     //mute(client)
+    announce(client)
     eval(client)
     help(client)
     support(client)
