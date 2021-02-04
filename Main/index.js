@@ -22,6 +22,7 @@ const welcome = require('./Administrative_Commands/welcome')
 const current_prefix = require('./Administrative_Commands/prefix-call')
 const dan_andrews = require('./Fun Commands/dan_andrews')
 const announce = require('./Administrative_Commands/Announce')
+const monke = require('./Fun Commands/monke')
 
 const command = require('./command')
 const { Mongoose } = require('mongoose')
@@ -48,6 +49,7 @@ client.on('ready', async () => {
     welcome(client)
     current_prefix(client)
     dan_andrews(client)
+    monke(client)
 
     await mongo().then(Mongoose => {
         try {
