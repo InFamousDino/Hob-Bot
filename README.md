@@ -1,6 +1,5 @@
-# Hob-Bot
-Sebs New bot called Hob totally not Wob nor Hue.
-Just inspired by those Discord bots.
+# Hob-Bot Development Branch
 
-Just doing my own thing maybe it will be public or just my own for use.
- This is me learning as well so dont kill me for my bad scriping.
+aaaaaaaaaa Development Branch for hob!! This is really me testing stuff before throwing it into the main branch.
+
+Cool thnaks.
