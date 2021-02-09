@@ -1,5 +1,4 @@
 # Hob-Bot Development Branch
 
-aaaaaaaaaa Development Branch for hob!! This is really me testing stuff before throwing it into the main branch.
-
-Cool thnaks.
+Hiya, Seb here. This is my cool bot called Hob!
+There is a lot of stuff to be done before I can launch Hob to the public, so yeah enjoy I guess.
