@@ -1,9 +1,10 @@
 const command = require('../command')
 const developerIds = '584297317432164366'
+const { prefix } = require('../config.json')
 
 module.exports = client => {
     command(client, 'editstatus', message => {
-        const content = message.content.replace(';editstatus ', '')
+        const content = message.content.replace(`${prefix}editstatus `, '')
         const { member } = message
         
         if (member.id === developerIds) {

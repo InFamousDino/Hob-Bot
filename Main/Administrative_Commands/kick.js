@@ -1,4 +1,5 @@
 const command = require('../command')
+const { prefix } = require('../config.json')
 
 module.exports = client => {
     command(client, 'kick', message => {
@@ -8,7 +9,7 @@ module.exports = client => {
 
         if ( member.hasPermission('ADMINISTRATOR') || member.hasPermission('KICK_MEMBERS')) {
                 const target = mentions.users.first()
-                const reason = message.content.replace(';kick ', ' ')
+                const reason = message.content.replace(`${prefix}kick `, ' ')
                 
                 if (target) {
                     const targetMember = message.guild.members.cache.get(target.id)
