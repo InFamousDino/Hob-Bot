@@ -16,7 +16,7 @@ exports.execute = (client, message, args) => {
     .addFields(
       {
         name: "**Prefix:**",
-        value: `${config.prefix}`,
+        value: `${client.config.prefix}`,
         inline: true,
       },
 
