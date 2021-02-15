@@ -1,6 +1,8 @@
 const filename = require('path').basename(__filename).split(".")[0]
+const { prefix } =require('../../config.json')
+
 exports.execute = (client, message, args) => {
-    const result = eval(message.content.replace(`${config.prefix}eval`, ''))
+    const result = eval(message.content.replace(`${prefix}eval`, ''))
     message.channel.send(result)
 }
 exports.config = {
