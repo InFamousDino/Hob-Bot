@@ -46,7 +46,6 @@ module.exports = (client) => {
             if(message.member.hasPermission(perm) !== true) lacking.push(perm)
         })
         if(lacking.length !== 0) return message.channel.send(`You are lacking permissions:\n \`${lacking.join("\n")}\``)
-        console.log(lacking);
         try {
             cmd.execute(client, message, args); 
           } catch (error) {
