@@ -1,3 +1,4 @@
+return; // you may have to edit yourself because this involves more than one event (or just call me back later)
 const mongo = require('../Non-Command/mongo')
 const command = require('../command')
 const welcomeSchema = require('../../schemas/welcome-schema')
