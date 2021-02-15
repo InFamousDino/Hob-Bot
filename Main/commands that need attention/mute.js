@@ -1,4 +1,5 @@
-  
+
+return; // you may have to edit yourself because this involves more than one event (or just call me back later)
 const redis = require('../Other/redis')
 const command = require('../command.js')
 
