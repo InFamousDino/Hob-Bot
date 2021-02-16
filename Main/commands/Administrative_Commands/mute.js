@@ -11,7 +11,7 @@ exports.execute = (client, message, args) => {
 
       if (!args[1]) {
           memberTarget.roles.add(muteRole.id);
-          message.channel.send(`<@${memberTarget.user.id}> has been muted`);
+          message.channel.send(`<@${memberTarget.user.id}> has been muted!`);
           return
       }
       memberTarget.roles.remove(mainRole.id);
