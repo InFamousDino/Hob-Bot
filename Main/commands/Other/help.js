@@ -17,15 +17,15 @@ exports.execute = (client, message, args) => {
     embed.addFields(
     {
         name: '**Fun Commands**',
-        value: '`owo`, `say`, `forg`, `rate`, `dan_andrews`, `monke`.',
+        value: '`owo`, `say`, `forg`, `rate`, `dan_andrews`, `monke`, `bocc`, `amogus`.',
         inline: true
     },
-
+    
     {
         name: '**Other Commands**',
-        value: '`help`, `serverlist`, `support`.',
+        value: '`help`, `serverlist`, `support`, `credits`.',
         inline: true
-
+    
     })
     message.channel.send(embed)
     }
@@ -34,13 +34,13 @@ exports.execute = (client, message, args) => {
             embed.addFields(
             {
                 name: '**Fun Commands**',
-                value: '`owo`, `say`, `forg`, `rate`, `dan_andrews`, `monke`.',
+                value: '`owo`, `say`, `forg`, `rate`, `dan_andrews`, `monke`, `bocc`, `amogus`.',
                 inline: true
             },
         
             {
                 name: '**Other Commands**',
-                value: '`help`, `serverlist`, `support`.',
+                value: '`help`, `serverlist`, `support`, `credits`.',
                 inline: true
         
             },
