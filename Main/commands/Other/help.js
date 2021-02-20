@@ -2,32 +2,59 @@ const Discord = require('discord.js')
 const filename = require('path').basename(__filename).split(".")[0]
 exports.execute = (client, message, args) => {
     const embed = new Discord.MessageEmbed()
-    .setTitle('**Help Commands**')
-    .setFooter('Hob Bot')
-    .setColor('#00AAFF')
+    const embed2 = new Discord.MessageEmbed()
+
+    const { dev } = require('../../config.json')
+    const { member } = message
+
+    embed.setTitle('**Help Commands**')
+    embed.setFooter('Hob Bot')
+    embed.setColor('#00AAFF')
     //.setImage('https://cdn.discordapp.com/attachments/799539037332439041/799826560424869898/GFX-Style.jpg')
-    .setThumbnail('https://cdn.discordapp.com/attachments/799539037332439041/799826560424869898/GFX-Style.jpg')
+    embed.setThumbnail('https://cdn.discordapp.com/attachments/799539037332439041/799826560424869898/GFX-Style.jpg')
     
-    .addFields(
+    if (!member.hasPermission('KICK_MEMBERS' || 'BAN_MEMBERS')){
+    embed.addFields(
     {
         name: '**Fun Commands**',
-        value: '`owo`, `say`, `forg`, `rate`.',
+        value: '`owo`, `say`, `forg`, `rate`, `dan_andrews`, `monke`.',
         inline: true
-    },
-
-    {
-        name: '**Server Admin Commands**',
-        value: '`editstatus`, `mute`, `kick`, `ban`, `purge`, `config`, `setwelcome`, `prefix`. ',
-        inline: true 
     },
 
     {
         name: '**Other Commands**',
-        value: '`help`, `permlevel`, `ping`, `serverlist`, `support`, `dan_andrews`.',
+        value: '`help`, `serverlist`, `support`.',
         inline: true
 
     })
     message.channel.send(embed)
+    }
+
+    if (member.hasPermission('KICK_MEMBERS' || 'BAN_MEMBERS')){
+            embed.addFields(
+            {
+                name: '**Fun Commands**',
+                value: '`owo`, `say`, `forg`, `rate`, `dan_andrews`, `monke`.',
+                inline: true
+            },
+        
+            {
+                name: '**Other Commands**',
+                value: '`help`, `serverlist`, `support`.',
+                inline: true
+        
+            },
+
+            {
+                name: '**Server Admin Commands**',
+                value: '`Announce`, `Ban`, `Kick`, `Mute`, `Unmute`, `Purge`, `Bot-Config`.',
+                inline: true
+        
+            }
+        )
+
+        message.channel.send(embed)
+    }
 }
 exports.config = {
     disabled: false, // if the command is disabled
