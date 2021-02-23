@@ -17,7 +17,7 @@ exports.execute = (client, message, args) => {
     embed.addFields(
     {
         name: '**Fun Commands**',
-        value: '`owo`, `say`, `forg`, `rate`, `dan_andrews`, `monke`, `bocc`, `amogus`.',
+        value: '`owo`, `say`, `forg`, `rate`, `dan_andrews`, `monke`, `bocc`, `amogus`, `avatar`.',
         inline: true
     },
     
@@ -34,7 +34,7 @@ exports.execute = (client, message, args) => {
             embed.addFields(
             {
                 name: '**Fun Commands**',
-                value: '`owo`, `say`, `forg`, `rate`, `dan_andrews`, `monke`, `bocc`, `amogus`.',
+                value: '`owo`, `say`, `forg`, `rate`, `dan_andrews`, `monke`, `bocc`, `amogus`, `avatar`.',
                 inline: true
             },
         
