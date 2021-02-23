@@ -1,6 +1,6 @@
 {
   "name": "admin",
-  "version": "1.0.0",
+  "version": "0.5.5",
   "description": "\"Hob is a bot made by Seb, this is totally not hue nor anything else but it is inspired by them.\"",
   "main": "index.js",
   "dependencies": {
