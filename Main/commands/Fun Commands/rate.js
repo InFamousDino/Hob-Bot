@@ -1,16 +1,16 @@
+const Discord = require('discord.js')
+
 const filename = require('path').basename(__filename).split(".")[0]
 exports.execute = (client, message, args) => {
     if(!args[0]) return message.channel.send(`I RATE YOUR ABILITY TO GIVE ARGS 0/10 >:(`)
     const rating = Math.floor(Math.random() * 10) + 1;
-    const banned = [
-        "@everyone",
-        "@here",
-        "<@&" //roles
-    ]
-    args.forEach(arg => {
-        if(banned.includes(arg)) arg = ""
-    })
-    message.channel.send(`I rate \`${args.join(" ")}\` a \`${rating}/10\` `)
+    const embed = new Discord.MessageEmbed()
+
+    embed.setDescription(`I rate \`${args.join(" ")}\` a \`${rating}/10\` `)
+    embed.setAuthor('Hob')
+    embed.setColor('#00AAFF')
+
+    message.channel.send(embed)
 }
 exports.config = {
     disabled: false, // if the command is disabled
