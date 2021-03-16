@@ -3,6 +3,8 @@ const client = new Discord.Client()
 const config = require('./config.json')
 
 client.commands = new Map()
+client.aliases = new Map()
+
 client.config = require('./config.json')
 
 require(`./functions`)(client)

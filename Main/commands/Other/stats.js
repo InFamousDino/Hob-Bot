@@ -8,7 +8,7 @@ exports.execute = (client, message, args) => {
         // Setting up embed \\
 
         embed.setTitle(`**${guild.name} Stats**`)
-        embed.setFooter('Hob Bot Statistics', 'https://cdn.discordapp.com/attachments/799539037332439041/799826560424869898/GFX-Style.jpg')
+        embed.setFooter('Hob Bot Statistics', 'https://cdn.discordapp.com/attachments/799945197105709067/821489358787706950/GFX-Style.jpg')
 
         embed.addFields(
             {
@@ -24,7 +24,7 @@ exports.execute = (client, message, args) => {
     })
 }
 exports.config = {
-    disabled: true, // if the command is disabled
+    disabled: false, // if the command is disabled
     permission: [], // List of perms https://discord.com/developers/docs/topics/permissions#permissions-bitwise-permission-flags
     guildOnly: false, // if you can use commands in only guilds or also dms
     hobDevOnly: false, // If you want only hob devs can use
@@ -33,6 +33,6 @@ exports.config = {
 exports.info = {
     name: filename,
     category: __dirname.split("/")[__dirname.split("/").length - 1],
-    description: `view each hob server and their member count`,
+    description: `Check the server statistics.`,
     usage: `${filename}` 
 }
