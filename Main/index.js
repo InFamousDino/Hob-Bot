@@ -10,6 +10,11 @@ require('./command')(client)
 
 client.on('ready', async () => {
     console.log('Hob is activated!')
+
+    setInterval(() => { 
+        client.destroy()
+        client.login(config.token)
+      }, 3600000); 
 })
 
 client.login(config.token)

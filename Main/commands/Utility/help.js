@@ -17,15 +17,21 @@ exports.execute = (client, message, args) => {
     embed.addFields(
     {
         name: '**Fun Commands**',
-        value: '`owo`, `say`, `forg`, `rate`, `dan_andrews`, `monke`, `bocc`, `amogus`, `avatar`.',
+        value: '`say`, `forg`, `rate`, `bocc`, `amogus`.',
         inline: true
     },
     
     {
-        name: '**Other Commands**',
-        value: '`help`, `serverlist`, `support`, `credits`.',
+        name: '**Utility Commands**',
+        value: '`help`, `support`, `avatar`.',
         inline: true
-    
+    },
+
+    {
+        name: '**Other Commands**',
+        value: '`serverlist`, `credits`.',
+        inline: true
+
     })
     message.channel.send(embed)
     }
@@ -34,13 +40,19 @@ exports.execute = (client, message, args) => {
             embed.addFields(
             {
                 name: '**Fun Commands**',
-                value: '`owo`, `say`, `forg`, `rate`, `dan_andrews`, `monke`, `bocc`, `amogus`, `avatar`.',
+                value: '`say`, `forg`, `rate`, `bocc`, `amogus`.',
+                inline: true
+            },
+
+            {
+                name: '**Utility Commands**',
+                value: '`help`, `support`, `avatar`.',
                 inline: true
             },
         
             {
                 name: '**Other Commands**',
-                value: '`help`, `serverlist`, `support`, `credits`.',
+                value: '`serverlist`, `credits`.',
                 inline: true
         
             },
