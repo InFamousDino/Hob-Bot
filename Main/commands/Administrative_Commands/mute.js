@@ -14,12 +14,9 @@ exports.execute = (client, message, args) => {
           message.channel.send(`<@${memberTarget.user.id}> has been muted!`);
           return
       }
-      memberTarget.roles.remove(mainRole.id);
-      message.channel.send(`<@${memberTarget.user.id}> has been muted for ${ms(ms(args[1]))}`);
 
-      setTimeout(function () {
-          memberTarget.roles.remove(muteRole.id);
-      }, ms(args[1]));
+      message.channel.send(`<@${memberTarget.user.id}> has been muted.`);
+
   } else {
       message.channel.send('Cant find that member!');
   }
@@ -37,5 +34,5 @@ exports.info = {
   name: filename,
   category: __dirname.split("/")[__dirname.split("/").length - 1],
   description: `Mute a user.`,
-  usage: `${filename} <@user> <Time>` 
+  usage: `${filename} <@user> [Reason]` 
 }
