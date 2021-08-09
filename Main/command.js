@@ -2,8 +2,6 @@ const { prefix } = require('./config.json')
 const { promisify } = require("util");
 const { ClientUser } = require('discord.js');
 const readdir = promisify(require("fs").readdir);
-const mongo = require('./src/mongo')
-const commandPrefixSchema = require('./schema/command-prefix-schema')
 module.exports = (client) => {
     loadCommands(client)
     

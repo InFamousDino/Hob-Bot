@@ -1,5 +1,7 @@
 const Discord = require('discord.js')
 
+const prefixSchema = require('./models/prefixSchema')
+
 const { Client, Intents } = require("discord.js");
 const client = new Client({ 
   intents: ["DIRECT_MESSAGES", "GUILDS", "GUILD_BANS", "GUILD_INTEGRATIONS", "GUILD_MEMBERS", "GUILD_MESSAGES", "GUILD_WEBHOOKS"], // You may need to configure this based off what you want
@@ -10,33 +12,33 @@ const client = new Client({
 });
 
 const config = require('./config.json')
+let prefixMain = require('./config.json')
 
-const mongo = require('./src/mongo')
+const mongoose = require('mongoose')
 
 client.commands = new Map()
 client.aliases = new Map()
-
-client.config = require('./config.json')
 
 require(`./functions`)(client)
 require('./command')(client)
 
 client.on('ready', async () => {
     console.log('Hob is activated!')
+})
 
-    setInterval(() => { 
-        client.destroy()
-        client.login(config.token)
-      }, 3600000); 
+const data = await prefixSchema.findOne({ Guild : message.guild.id })
+var prefix = {}
+if (!data) prefix = ';'
+else prefix = data.Prefix
 
-      //await mongo().then(mongoose => {
-      //  try {
-      //    console.log('Mongo Connected')
-      //  } finally {
-      //    mongoose.connection.close()
-      //  }
-
-      //})
+mongoose.connect(config.mongoID, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false
+}).then(()=>[
+  console.log("Conntected to DB")
+]).catch((err)=>{
+  console.log(err)
 })
 
 client.login(config.token)
