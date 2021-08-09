@@ -1,0 +1,5 @@
+{
+    "token": "(bot token)",
+    "mongoID": "mongodb+srv://(username):(password)@(database URL)/(database name)",
+    "prefix": ";"
+}
