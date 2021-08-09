@@ -1,4 +1,5 @@
 const config = require('./config.json')
+const dev = require('./dev.json')
 const { promisify } = require("util");
 const { ClientUser } = require('discord.js');
 const prefixSchema = require('./models/prefixSchema')
@@ -44,7 +45,7 @@ module.exports = (client) => {
         
         if (cmd && !message.guild && cmd.config.guildOnly) return message.channel.send("This command is unavailable in DMs. Please run in a Server.");
 
-        if(cmd.config.hobDevOnly == true && !client.config.dev.includes(message.author.id)) return message.channel.send(`You cannot use this command!`)
+        if(cmd.config.hobDevOnly == true && !dev.devID.includes(message.author.id)) return message.channel.send(`You cannot use this command!`)
 
         const requiredPerms = cmd.config.permission
         const lacking = []

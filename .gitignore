@@ -1,4 +1,6 @@
 # Important stuff below.
 
 node_modules
+
 Main/config.json
+Main/dev.json
