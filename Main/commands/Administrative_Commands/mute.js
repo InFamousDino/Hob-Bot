@@ -1,6 +1,5 @@
 const filename = require('path').basename(__filename).split(".")[0]
 exports.execute = (client, message, args) => {
-  const ms = require('ms')
   const target = message.mentions.users.first();
   if (target) {
 
