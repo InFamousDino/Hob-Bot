@@ -1,5 +1,5 @@
 const filename = require('path').basename(__filename).split(".")[0]
-exports.execute = (client, message, args) => {
+exports.execute = async (client, message, args) => {
 
     const prefixSchema = require('../../models/prefixSchema')
     if (!args[0]) return message.channel.send('Please specify a prefix to change to.')

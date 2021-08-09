@@ -1,6 +1,7 @@
 const { prefix } = require('./config.json')
 const { promisify } = require("util");
 const { ClientUser } = require('discord.js');
+const prefixSchema = require('./models/prefixSchema')
 const readdir = promisify(require("fs").readdir);
 module.exports = (client) => {
     loadCommands(client)
@@ -18,6 +19,10 @@ module.exports = (client) => {
         })
     }
     client.on('messageCreate', async message => {
+        const data = await prefixSchema.findOne({ Guild : message.guild.id })
+        var prefix = {}
+        if (!data) prefix = ';'
+        else prefix = data.Prefix
         const { content } = message;
         if(message.author.bot == true) return // This is a bot so ignore it
         const prefixMention = new RegExp(`^<@!?${client.user.id}>( |)$`);
