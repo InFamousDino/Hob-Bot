@@ -5,16 +5,12 @@ const dev = require('../../dev.json')
 exports.execute = async (client, message, args) => {
     const code = args.join(" ");
 
-    if (message.content = `${config.prefix}${filename} config.token`, message.content = `${config.prefix}${filename} config.mongoID`) {
-        message.reply('nice try uwu <3')
-    } else {
-        try {
-            const evaled = await eval(code);
-            const clean = await client.clean(client, evaled);
-            message.reply(`\`\`\`js\n${clean}\n\`\`\``);
-        } catch (err) {
-            message.reply(`\`ERROR\` \`\`\`xl\n${await client.clean(client, err)}\n\`\`\``);
-        }
+    try {
+        const evaled = await eval(code);
+        const clean = await client.clean(client, evaled);
+        message.reply(`\`\`\`js\n${clean}\n\`\`\``);
+    } catch (err) {
+        message.reply(`\`ERROR\` \`\`\`xl\n${await client.clean(client, err)}\n\`\`\``);
     }
 }
 exports.config = {
