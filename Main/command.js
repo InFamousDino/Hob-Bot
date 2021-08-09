@@ -1,4 +1,4 @@
-const { prefix } = require('./config.json')
+const config = require('./config.json')
 const { promisify } = require("util");
 const { ClientUser } = require('discord.js');
 const prefixSchema = require('./models/prefixSchema')
@@ -21,7 +21,7 @@ module.exports = (client) => {
     client.on('messageCreate', async message => {
         const data = await prefixSchema.findOne({ Guild : message.guild.id })
         var prefix = {}
-        if (!data) prefix = ';'
+        if (!data) prefix = config.prefix
         else prefix = data.Prefix
         const { content } = message;
         if(message.author.bot == true) return // This is a bot so ignore it
