@@ -10,8 +10,6 @@ exports.execute = (client, message, args) => {
     embed.setTitle('**Help Commands**')
     embed.setFooter('Hob Bot')
     embed.setColor('#00AAFF')
-    //.setImage('https://cdn.discordapp.com/attachments/799539037332439041/799826560424869898/GFX-Style.jpg')
-    embed.setThumbnail('https://cdn.discordapp.com/attachments/799539037332439041/799826560424869898/GFX-Style.jpg')
     
     if (!member.permissions.has('KICK_MEMBERS' || 'BAN_MEMBERS')){
     embed.addFields(
@@ -33,10 +31,10 @@ exports.execute = (client, message, args) => {
         inline: true
 
     })
-    message.channel.send(embed)
+    message.reply({ embeds: [embed] })
     }
 
-    if (member.hasPermission('KICK_MEMBERS' || 'BAN_MEMBERS')){
+    if (member.permissions.has('KICK_MEMBERS' || 'BAN_MEMBERS')){
             embed.addFields(
             {
                 name: '**Fun Commands**',
@@ -59,13 +57,13 @@ exports.execute = (client, message, args) => {
 
             {
                 name: '**Server Admin Commands**',
-                value: '`Announce`, `Ban`, `Kick`, `Mute`, `Unmute`, `Purge`, `Bot-Config`.',
+                value: '`announce`, `Ban`, `Kick`, `Mute`, `Unmute`, `Purge`, `Bot-Config`.',
                 inline: true
         
             }
         )
 
-        message.channel.send(embed)
+        message.reply({ embeds: [embed] })
     }
 }
 exports.config = {

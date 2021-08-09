@@ -10,7 +10,7 @@ exports.execute = (client, message, args) => {
     embed.setAuthor('Hob')
     embed.setColor('#00AAFF')
 
-    message.channel.send(embed)
+    message.channel.send({ embeds: [embed] })
 }
 exports.config = {
     disabled: false, // if the command is disabled

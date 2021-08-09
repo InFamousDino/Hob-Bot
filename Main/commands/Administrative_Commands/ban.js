@@ -7,7 +7,7 @@ exports.execute = (client, message, args) => {
     const user = client.findUser(message, args[0])
     if(user[0] == false) return message.channel.send(`${user[1]}`)
 
-    if (user[1].user.id === message.guild.owner.id) {
+    if (user[1].user.id === message.guild.ownerId) {
         return message.channel.send(`You cannot ${filename} the owner!`)
     }
 
@@ -19,7 +19,7 @@ exports.execute = (client, message, args) => {
         return message.channel.send(`I don't think you want to ${filename} yourself`)
     }
 
-    if (user[1].roles.highest.position >= message.member.roles.highest.position && message.author.id !== message.guild.ownerID) {
+    if (user[1].roles.highest.position >= message.member.roles.highest.position && message.author.id !== message.guild.ownerId) {
         return message.channel.send(`You can't ${filename} people higher role than yourself!`);
     }
 

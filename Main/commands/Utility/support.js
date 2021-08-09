@@ -1,6 +1,14 @@
 const filename = require('path').basename(__filename).split(".")[0]
+const { MessageActionRow, MessageButton } = require('discord.js');
 exports.execute = (client, message, args) => {
-    message.channel.send('Join the Hob support server here: https://discord.gg/NKEzt7Cd3q')
+    const row = new MessageActionRow()
+			.addComponents(
+				new MessageButton()
+                    .setStyle('LINK')
+					.setURL('https://discord.gg/S8CzyTymgf')
+					.setLabel('Support server')
+			);
+    message.reply({ content: 'Join the Hob support server by clicking on button!', components: [row] })
 }
 exports.config = {
     disabled: false, // if the command is disabled
