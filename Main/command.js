@@ -19,7 +19,7 @@ module.exports = (client) => {
             })
         })
     }
-    client.on('message', async message => {
+    client.on('messageCreate', async message => {
         const { content } = message;
         if(message.author.bot == true) return // This is a bot so ignore it
         const prefixMention = new RegExp(`^<@!?${client.user.id}>( |)$`);
