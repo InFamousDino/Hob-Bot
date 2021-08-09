@@ -13,7 +13,7 @@ exports.execute = (client, message, args) => {
     //.setImage('https://cdn.discordapp.com/attachments/799539037332439041/799826560424869898/GFX-Style.jpg')
     embed.setThumbnail('https://cdn.discordapp.com/attachments/799539037332439041/799826560424869898/GFX-Style.jpg')
     
-    if (!member.hasPermission('KICK_MEMBERS' || 'BAN_MEMBERS')){
+    if (!member.permission.has('KICK_MEMBERS' || 'BAN_MEMBERS')){
     embed.addFields(
     {
         name: '**Fun Commands**',

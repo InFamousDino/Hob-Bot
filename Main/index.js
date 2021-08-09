@@ -26,11 +26,6 @@ client.on('ready', async () => {
     console.log('Hob is activated!')
 })
 
-const data = await prefixSchema.findOne({ Guild : message.guild.id })
-var prefix = {}
-if (!data) prefix = ';'
-else prefix = data.Prefix
-
 mongoose.connect(config.mongoID, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
