@@ -8,7 +8,7 @@ exports.execute = (client, message, args) => {
         // Setting up embed \\
 
         embed.setTitle(`**${guild.name} Stats**`)
-        embed.setFooter('Hob Bot Statistics', 'https://cdn.discordapp.com/attachments/799945197105709067/821489358787706950/GFX-Style.jpg')
+        embed.setFooter('Hob Bot Statistics')
 
         embed.addFields(
             {
@@ -20,7 +20,7 @@ exports.execute = (client, message, args) => {
 
         // Sending & Extras \\
 
-        message.channel.send(embed)
+        message.reply({ embeds: [embed] })
     })
 }
 exports.config = {

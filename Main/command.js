@@ -49,7 +49,7 @@ module.exports = (client) => {
         const requiredPerms = cmd.config.permission
         const lacking = []
         requiredPerms.forEach(perm => {
-            if(message.member.hasPermission(perm) !== true) lacking.push(perm)
+            if (message.member.permissions.has(perm) !== true) lacking.push(perm)
         })
         if(lacking.length !== 0) return message.channel.send(`You are lacking permissions:\n \`${lacking.join("\n")}\``)
         try {

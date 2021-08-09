@@ -1,18 +1,14 @@
 const Discord = require('discord.js')
 const filename = require('path').basename(__filename).split(".")[0]
-exports.execute = (client, message, args) => {
-  let announcemessage = message.content.match(/(?<=announce ).*$/)[0];
+exports.execute = (client, message, [...embed]) => {
 
   const announceEmbed = new Discord.MessageEmbed()
     .setColor("#ff1233")
     .setTitle(`Important Announcement`)
-    .setDescription(announcemessage)
-    .setFooter(`Hob Bot`)
-    .setThumbnail(
-      "https://cdn.discordapp.com/attachments/799539037332439041/799826560424869898/GFX-Style.jpg"
-    );
+    .setDescription(embed.toString())
+    .setFooter(`${client.user.username} Bot`)
 
-  message.channel.send(announceEmbed);
+  message.channel.send({ embeds: [announceEmbed] });
   message.delete();
 };
 exports.config = {

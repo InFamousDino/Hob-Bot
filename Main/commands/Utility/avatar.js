@@ -3,7 +3,7 @@ const Discord = require('discord.js')
 const filename = require('path').basename(__filename).split(".")[0]
 exports.execute = (client, message, args) => {
         const user = message.mentions.users.first() || message.author;
-        message.channel.send(user.avatarURL())
+        message.reply(user.displayAvatarURL())
 }
 exports.config = {
     disabled: false, // if the command is disabled

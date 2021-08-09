@@ -2,7 +2,7 @@ const filename = require('path').basename(__filename).split(".")[0]
 exports.execute = (client, message, args) => {
     client.user.setPresence({
         activity: {
-            name: args.join(" "),
+            name: args,
             type: 0
         }
     })

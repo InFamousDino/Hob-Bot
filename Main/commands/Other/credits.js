@@ -1,17 +1,18 @@
 const Discord = require('discord.js')
 
 const filename = require('path').basename(__filename).split(".")[0]
-exports.execute = (client, message, args) => {
+exports.execute = async (client, message, args) => {
+    const seb = await client.users.fetch('584297317432164366')
+    const lc = await client.users.fetch('321323430630785024')
+    const rain = await client.users.fetch('297225184136396803')
+    const anthony = await client.users.fetch('299682971374452739')
     const embed = new Discord.MessageEmbed()
+        .setTitle('**Hob Credits**')
+        .setFooter('Hob Bot')
+        .setColor('#00AAFF')
+        .setDescription(`\`${seb.username}#${seb.discriminator}\` - Lead Developer, \`${lc.username}#${lc.discriminator}\` - Developer of Hob, \`${anthony.username}#${anthony.discriminator}\` - Contributer to Hob, \`${rain.username}#${rain.discriminator}\` - Contributer of Hob.`)
 
-    embed.setTitle('**Hob Credits**')
-    .setThumbnail('https://cdn.discordapp.com/attachments/799539037332439041/799826560424869898/GFX-Style.jpg')
-    .setFooter('Hob Bot')
-    .setColor('#00AAFF')
-
-    .setDescription('`Sebbb#7871` - Lead Developer, `JC (Lanx The Showmaker)#1337` - Developer of Hob, `ItzRock#2877` - Contributer to Hob, `Rain Gooders#5627` - Contributer of Hob.')
-
-    message.channel.send(embed)
+    message.channel.send({ embeds: [embed] })
 }
 exports.config = {
     disabled: false, // if the command is disabled

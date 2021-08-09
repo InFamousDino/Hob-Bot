@@ -42,7 +42,7 @@ exports.execute = (client, message, args) => {
     )
 
     member.kick(reason)
-    message.channel.send(kicklog)
+    message.channel.send({ embeds: [kicklog] })
 }
 exports.config = {
     disabled: false, // if the command is disabled

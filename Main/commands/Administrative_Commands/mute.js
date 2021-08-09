@@ -1,6 +1,5 @@
 const filename = require('path').basename(__filename).split(".")[0]
 exports.execute = (client, message, args) => {
-  const ms = require('ms')
   const target = message.mentions.users.first();
   if (target) {
 
@@ -11,14 +10,14 @@ exports.execute = (client, message, args) => {
 
       if (!args[1]) {
           memberTarget.roles.add(muteRole.id);
-          message.channel.send(`<@${memberTarget.user.id}> has been muted!`);
+          message.reply(`<@${memberTarget.user.id}> has been muted!`);
           return
       }
 
-      message.channel.send(`<@${memberTarget.user.id}> has been muted.`);
+      message.reply(`<@${memberTarget.user.id}> has been muted.`);
 
   } else {
-      message.channel.send('Cant find that member!');
+    message.reply('Cant find that member!');
   }
 }
 
