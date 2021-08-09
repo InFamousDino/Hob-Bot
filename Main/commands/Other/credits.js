@@ -9,7 +9,7 @@ exports.execute = (client, message, args) => {
     .setFooter('Hob Bot')
     .setColor('#00AAFF')
 
-    .setDescription('`InFamousDino#7871` - Lead Developer, `ItzRock#2877` - Contributer to Hob!!')
+    .setDescription('`Sebbb#7871` - Lead Developer, `JC (Lanx The Showmaker)#1337` - Developer of Hob, `ItzRock#2877` - Contributer to Hob, `Rain Gooders#5627` - Contributer of Hob.')
 
     message.channel.send(embed)
 }
