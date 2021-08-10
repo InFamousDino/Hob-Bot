@@ -10,10 +10,10 @@ const client = new Client({
 });
 
 const config = require('./config.json')
-let prefixMain = require('./config.json')
 
 const mongoose = require('mongoose')
 
+client.config = config
 client.commands = new Map()
 client.aliases = new Map()
 
@@ -21,7 +21,7 @@ require(`./functions`)(client)
 require('./command')(client)
 
 client.on('ready', async () => {
-    console.log('Hob is activated!')
+  console.log(`${client.user.tag} is activated!`)
 })
 
 mongoose.connect(config.mongoID, {
