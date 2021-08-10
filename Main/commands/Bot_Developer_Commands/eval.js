@@ -1,10 +1,7 @@
 const filename = require('path').basename(__filename).split(".")[0]
-const config =require('../../config.json')
-const dev = require('../../dev.json')
 
 exports.execute = async (client, message, args) => {
     const code = args.join(" ");
-
     try {
         const evaled = await eval(code);
         const clean = await client.clean(client, evaled);

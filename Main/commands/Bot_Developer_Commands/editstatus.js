@@ -1,13 +1,9 @@
 const filename = require('path').basename(__filename).split(".")[0]
 exports.execute = (client, message, args) => {
-    client.user.setPresence({
-        activity: {
-            name: args,
-            type: 0
-        }
-    })
+    const status = args.join(" ")
+    client.user.setPresence({ activities: [{ name: status }] });
 
-    message.channel.send('Sucessfully set my status to ' + args.join(" ") + '.')
+    message.reply(`Sucessfully set my status to ${status}`)
 }
 exports.config = {
     disabled: false, // if the command is disabled
@@ -19,6 +15,6 @@ exports.config = {
 exports.info = {
     name: filename,
     category: __dirname.split("/")[__dirname.split("/").length - 1],
-    description: `sets hob's status`,
+    description: `sets bot's status`,
     usage: `${filename} <what to set to>` 
 }

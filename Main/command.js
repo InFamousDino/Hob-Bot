@@ -1,5 +1,4 @@
 const config = require('./config.json')
-const dev = require('./dev.json')
 const { promisify } = require("util");
 const { ClientUser } = require('discord.js');
 const prefixSchema = require('./models/prefixSchema')
@@ -43,20 +42,20 @@ module.exports = (client) => {
         const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command)); // fetch command
         if (!cmd) return; // if a command that doesnt exist then just return
         
-        if (cmd && !message.guild && cmd.config.guildOnly) return message.channel.send("This command is unavailable in DMs. Please run in a Server.");
+        if (cmd && !message.guild && cmd.config.guildOnly) return message.reply("This command is unavailable in DMs. Please run in a Server.");
 
-        if(cmd.config.hobDevOnly == true && !dev.devID.includes(message.author.id)) return message.channel.send(`You cannot use this command!`)
+        if (cmd.config.hobDevOnly == true && !client.config.devID.includes(message.author.id)) return message.reply(`You cannot use this command!`)
 
         const requiredPerms = cmd.config.permission
         const lacking = []
         requiredPerms.forEach(perm => {
             if (message.member.permissions.has(perm) !== true) lacking.push(perm)
         })
-        if(lacking.length !== 0) return message.channel.send(`You are lacking permissions:\n \`${lacking.join("\n")}\``)
+        if(lacking.length !== 0) return message.reply(`You are lacking permissions:\n \`${lacking.join("\n")}\``)
         try {
             cmd.execute(client, message, args); 
           } catch (error) {
-            message.channel.send(`An error has occured in the command! ${error.name}: ${error.message}.`)
+            message.reply(`An error has occured in the command! ${error.name}: \`${error.message}\``)
             console.log(`COMMAND ERROR => ${error.name}: ${error.message}`)
           }
     })
