@@ -1,7 +1,5 @@
 # Hob-Bot
 
-![image](https://user-images.githubusercontent.com/61729130/129024944-9a1d0c8b-15e2-4951-ad68-24ac79f923d6.png)
-
 
 Seb here, this is my custom Discord bot which has multiple services for many server needs. This is very because it isnt done ofc.
 
