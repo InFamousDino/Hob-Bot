@@ -1,6 +1,0 @@
-{
-    "token": "(bot token)",
-    "mongoID": "(mongo URL)",
-    "prefix": ";",
-    "devID": [""]
-}
