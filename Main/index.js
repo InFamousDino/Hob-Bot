@@ -25,6 +25,7 @@ client.on('ready', async () => {
 })
 
 mongoose.connect(config.mongoID, {
+  keepAlive: true,
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false
