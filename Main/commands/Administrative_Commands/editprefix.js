@@ -20,6 +20,7 @@ exports.execute = async (client, message, args) => {
             }).save()
             message.channel.send(`Custom prefix in this server is now set to **${args[0]}**`)
         }
+        update()
     }
 
 }
