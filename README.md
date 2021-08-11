@@ -44,4 +44,4 @@ This is ***really*** not advisable without a Hob release. But to do this:
 # Links
 
 * [Hob Support Server](https://discord.gg/S8CzyTymgf)
-* [Hob Invite Link:](https://discord.com/oauth2/authorize?client_id=799469166351745036&permissions=8&scope=bot)
+* [Hob Invite Link](https://discord.com/oauth2/authorize?client_id=799469166351745036&permissions=8&scope=bot)
