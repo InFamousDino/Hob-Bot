@@ -1,5 +1,8 @@
 # Hob-Bot
 
+![image](https://user-images.githubusercontent.com/61729130/129024944-9a1d0c8b-15e2-4951-ad68-24ac79f923d6.png)
+
+
 Seb here, this is my custom Discord bot which has multiple services for many server needs. This is very because it isnt done ofc.
 
 # Prerequisites
@@ -41,4 +44,4 @@ This is ***really*** not advisable without a Hob release. But to do this:
 # Links
 
 * [Hob Support Server](https://discord.gg/S8CzyTymgf)
-* Hob Invite Link: Currently Unavaliable.
+* [Hob Invite Link:](https://discord.com/oauth2/authorize?client_id=799469166351745036&permissions=8&scope=bot)
