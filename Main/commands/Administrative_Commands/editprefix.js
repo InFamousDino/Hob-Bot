@@ -6,7 +6,7 @@ exports.execute = async (client, message, args) => {
     if (!args[0]) return message.channel.send('Please specify a prefix to change to.')
 
     const data = prefixSchema.findOne({ Guild : message.guild.id }).catch(error => { throw error })
-    if (data) {
+    if (!data) {
         async function update() {
             await prefixSchema.updateOne({ Guild: message.guild.id }, { $set: { Prefix: args[0] } })
             message.channel.send(`Your prefix has been updated to **${args[0]}**`)
