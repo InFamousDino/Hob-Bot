@@ -38,3 +38,7 @@ This is ***really*** not advisable without a Hob release. But to do this:
 2. Update Node.js if possible.
 3. Update all commands and modules to any removed/added content.
 
+# Links
+
+[Hob Support Server](https://discord.gg/S8CzyTymgf)
+Hob Invite Link: Currently Unavaliable.
