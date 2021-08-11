@@ -40,5 +40,5 @@ This is ***really*** not advisable without a Hob release. But to do this:
 
 # Links
 
-[Hob Support Server](https://discord.gg/S8CzyTymgf)
-Hob Invite Link: Currently Unavaliable.
+* [Hob Support Server](https://discord.gg/S8CzyTymgf)
+* Hob Invite Link: Currently Unavaliable.
