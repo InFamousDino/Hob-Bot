@@ -1,21 +1,17 @@
 const filename = require('path').basename(__filename).split(".")[0]
 exports.execute = async (client, message, args) => {
 
-    const mongoose = require('mongoose')
-    const prefixSchema = require('../../models/prefixSchema')
-    if (!args[0]) return message.channel.send('Please specify a prefix to change to.')
+const thread = await message.channel.threads.create({
+    name: `${args[0]}`,
+    autoArchiveDuration: 1440,
+    reason: `${args[1]}`,
+});
 
-    const data = prefixSchema.findOne({ Guild : message.guild.id }).catch(error => { throw error })
-    if (data) {
-        async function update() {
-            await prefixSchema.updateOne({ Guild: message.guild.id }, { $set: { Prefix: args[0] } })
-            message.channel.send(`Your prefix has been updated to **${args[0]}**`)
-        }
-        update()
-    }
+if (thread.joinable) await thread.join();
+
+
 
 }
-
 exports.config = {
     disabled: false, // if the command is disabled
     permission: ['ADMINISTRATOR'], // List of perms https://discord.com/developers/docs/topics/permissions#permissions-bitwise-permission-flags

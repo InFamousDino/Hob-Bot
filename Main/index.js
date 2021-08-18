@@ -1,4 +1,3 @@
-const prefixSchema = require('./models/prefixSchema')
 const { Client } = require("discord.js");
 const client = new Client({ 
   intents: 32767, // You may need to configure this based off what you want
@@ -34,6 +33,15 @@ mongoose.connect(config.mongoID, {
 ]).catch((err)=>{
   console.log(err)
 })
+
+client.on("guildCreate", async (guild) => {
+  const prefixSchema = require('./models/prefixSchema')
+
+  await new prefixSchema({
+    Guild : guild.id,
+    Prefix : `${config.prefix}`
+  }).save()
+});
 
 client.login(config.token)
 
