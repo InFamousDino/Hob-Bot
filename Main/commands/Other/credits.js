@@ -10,7 +10,7 @@ exports.execute = async (client, message, args) => {
         .setTitle('**Hob Credits**')
         .setFooter('Hob Bot')
         .setColor('#00AAFF')
-        .setDescription(`\`${seb.username}#${seb.discriminator}\` - Lead Developer, \`${lc.username}#${lc.discriminator}\` - Developer of Hob, \`${anthony.username}#${anthony.discriminator}\` - Contributer to Hob, \`${rain.username}#${rain.discriminator}\` - Contributer of Hob.`)
+        .setDescription(`\`${seb.username}#${seb.discriminator}\` - Creator of Hob, \`${lc.username}#${lc.discriminator}\` - Head Developer of Hob, \`${anthony.username}#${anthony.discriminator}\` - Contributer to Hob, \`${rain.username}#${rain.discriminator}\` - Contributer of Hob.`)
 
     message.channel.send({ embeds: [embed] })
 }

@@ -41,11 +41,11 @@ exports.execute = (client, message, args) => {
         }
     )
 
-    member.kick(reason)
+    //member.kick(reason)
     message.channel.send({ embeds: [kicklog] })
 }
 exports.config = {
-    disabled: true, // if the command is disabled
+    disabled: false, // if the command is disabled
     permission: ["KICK_MEMBERS"], // List of perms https://discord.com/developers/docs/topics/permissions#permissions-bitwise-permission-flags
     guildOnly: true, // if you can use commands in only guilds or also dms
     hobDevOnly: false, // If you want only hob devs can use
