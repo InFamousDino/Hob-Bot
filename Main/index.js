@@ -29,17 +29,32 @@ mongoose.connect(config.mongoID, {
   useUnifiedTopology: true,
   useFindAndModify: false
 }).then(()=>[
-  console.log("Conntected to DB")
+  console.log("Connected to DB")
 ]).catch((err)=>{
   console.log(err)
 })
 
 client.on("guildCreate", async (guild) => {
   const prefixSchema = require('./models/prefixSchema')
+  const configSchema = require('./models/configSchema')
 
   await new prefixSchema({
     Guild : guild.id,
     Prefix : `${config.prefix}`
+  }).save()
+
+  await new configSchema({
+    Guild : guild.id,
+
+    LogsChannel: undefined, 
+    WelcomeChannel: undefined,
+
+    MutedRole: undefined,
+    ModRole: undefined,
+    AdminRole: undefined,
+
+    LogsEnabled: false,
+    WelcomeEnabled: false,
   }).save()
 });
 
