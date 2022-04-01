@@ -1,5 +1,7 @@
 # Hob-Bot
 
+NOTICE 1/04/2022:
+I literally have no motivation to finish Hob in the future. This means I probably wont touch Hob unless necessary (Merging and some tiny fixes mostly). So thanks for sticking around, maybe one day I will finish it.
 
 Seb here, this is my custom Discord bot which has multiple services for many server needs. This is very because it isnt done ofc.
 
